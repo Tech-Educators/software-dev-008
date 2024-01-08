@@ -6,18 +6,51 @@
     <title>Document</title>
 </head>
 <body>
+    <style>
+        .text-medium {
+            color: rgb(126, 122, 248);
+        }
+
+        .text-big {
+            font-size: 30px;
+            margin: 40px;
+        }
+
+        body {
+            background-color: tomato;
+        }
+        p, h1 {
+            color: rgb(255, 255, 255);
+        }
+
+        img {
+            height: 300px;
+            width: auto;
+        }
+
+        #thisisunique {
+            background: radial-gradient(#e66465, #9198e5)
+        }
+
+        button:hover {
+           background-color: darkblue;
+        }
+      
+    </style>
+
     <header>
         <h1>All about monkeys!</h1>
         <h2 class="text-medium">I like bonobos</h2>
     </header>
     <main>
-        <h3 class="text-medium">This is section 1</h3>
+        <h3 class="text-medium text-big">This is section 1</h3>
         <img src='https://i.natgeofe.com/n/c89f197b-a8ad-49a7-b516-50a3fe3ddc29/01-bonobo-NationalGeographic_1227726.jpg?w=1084.125&h=721.875' alt="image of a bonobo"></img>
         <p>Lorem ipsum dolor sit <strong>amet</strong>consectetur adipisicing elit. Expedita saepe porro atque ipsum explicabo illum? Modi pariatur architecto maiores id esse? Molestiae veritatis ab commodi laboriosam tenetur dolores pariatur. Vitae!</p>
     </main>
     <section>
         <h3 id="thisisunique">This is section 2</h3>
-        <p>Lorem, <s>ipsum</s> dolor sit amet <ins>consectetur</ins> adipisicing elit. Officia velit aliquid laboriosam alias tenetur perferendis esse, nihil qui explicabo, atque similique tempore nam unde dolor itaque. Obcaecati illo esse modi.</p>
+        <p class="text-medium text-big">Lorem, <s>ipsum</s> dolor sit amet <ins>consectetur</ins> adipisicing elit. Officia velit aliquid laboriosam alias tenetur perferendis esse, nihil qui explicabo, atque similique tempore nam unde dolor itaque. Obcaecati illo esse modi.</p>
+        <button>Click me!</button>
     </section>
     <!-- Come back to talk about attributes -->
     <!-- Tags can have things called attributes -->
