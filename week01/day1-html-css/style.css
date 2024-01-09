@@ -1,0 +1,28 @@
+.text-medium {
+    color: rgb(126, 122, 248);
+}
+
+.text-big {
+    font-size: 30px;
+    margin: 40px;
+}
+
+body {
+    background-color: tomato;
+}
+p, h1 {
+    color: rgb(255, 255, 255);
+}
+
+img {
+    height: 300px;
+    width: auto;
+}
+
+#thisisunique {
+    background: radial-gradient(#e66465, #9198e5)
+}
+
+button:hover {
+   background-color: darkblue;
+}
