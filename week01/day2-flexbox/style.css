@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+img {
+    height: 100px;
+    width: 150px;
+}
+
+.txt-500 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.card {
+    border: 2px solid red;
+    width: 50vw;
+    background-color: tomato;
+    margin: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    max-width: 80vw;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
