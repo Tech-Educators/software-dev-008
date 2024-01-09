@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box
+}
+
+.box {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    border: 10px solid black;
+}
+
+.div1 {
+    box-sizing: border-box;
+}
+
+
+.div2 {
+    box-sizing: content-box;
+
+}
