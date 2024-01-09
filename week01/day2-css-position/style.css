@@ -1,0 +1,39 @@
+p {
+    width: 400px;
+}
+
+/* span {
+    display: block;
+    color: red;
+} */
+
+.box {
+    height: 100px;
+    width: 300px;
+    color: white;
+    background-color: black;
+}
+
+.absolute {
+    position: absolute;
+    top: 20px;
+    background-color: red;
+}
+
+.relative {
+    position: relative;
+    bottom: 20px;
+    background-color: purple;
+}
+
+.fixed {
+    position: fixed;
+    top: 20px;
+    left: 50px;
+}
+
+.sticky {
+    position: sticky;
+    top: 60px;
+    left: 400px;
+}
