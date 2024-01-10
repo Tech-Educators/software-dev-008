@@ -30,3 +30,5 @@ console.log('hello' + ' world!')
 const theTruth = true
 const theLie = false
 
+const intro = 5 + 10 + 11
+console.log(intro)
