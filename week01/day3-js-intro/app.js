@@ -25,7 +25,7 @@ true // also boolean
 
 // simple operators
 
-let sum = 1 + 1 // 2
+let sum2 = 1 + 1 // 2
 let difference = 1 - 1 // 0
 let produce = 2 * 2 // 4
 let divide = 10 / 2 // 5
@@ -66,6 +66,7 @@ counter += 5
     console.log('Hello ' + theName)
  }
 
+ // when we invoke the function we provide it the 'argument' - this is what value will replace the parameter 'theName'
  greetByName('Sam')
  greetByName('Davina')
 
@@ -73,3 +74,11 @@ counter += 5
  function greetMyDog() {
     console.log('Hello ' + myDogName)
  }
+
+ function sum(a, b) {
+    console.log(a + b)
+ }
+
+let myName = 'Sam'
+
+console.log(`Hello ${myName}`)
