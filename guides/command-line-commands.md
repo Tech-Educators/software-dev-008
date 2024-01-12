@@ -19,3 +19,5 @@ If you see a `~` it means you're in the ROOT directory. (ROOT directory) meaning
 `mkdir foldername` - will make a folder in your current location
 
 `touch filename.fileextension` - will make a file in your current location. eg `touch index.html` you can also chain together making files with one touch command `touch index.html style.css app.js` will create three files. 
+
+`pwd` - print working directory. Logs to the terminal your current fielepath.
