@@ -1,0 +1,7 @@
+body {
+    display: flex;
+}
+img {
+    margin: 5px;
+    height: 300px;
+}
