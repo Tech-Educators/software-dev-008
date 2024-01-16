@@ -78,6 +78,9 @@ let items = [
 
 for (let item of items) {
     let string = `${4 + 4} is 8`
-    console.log(this.name, this.price)
+    // not valid because this isn't refering to the object.
+    // console.log(this.name, this.price)
+
+    console.log(item.name, item.price)
 }
 
