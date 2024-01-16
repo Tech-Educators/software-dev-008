@@ -60,7 +60,8 @@ let chocolates = ['dark chocolate', 'galaxy', 'toblerone', 'twix', 'flakes']
 // function elsewhere() {
 
 // }
-
+console.log()
+document.addEventListener()
 chocolates.forEach(function(chocolate, thisdoesntmatter) {
     console.log(thisdoesntmatter, chocolate)
 })
