@@ -13,11 +13,11 @@ function changeBG() {
     // 5k miliseconds is 5 seconds. 
 }
 
+// setInterval also takes two Arguments - a function to run and how often to run it. 
 const btn = document.getElementById('btn')
 btn.addEventListener('click', changeBG)
 
 const plusP = document.getElementById('plusP')
-
 function addPlus() {
     plusP.textContent = `${plusP.textContent} +`
 }
