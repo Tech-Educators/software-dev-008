@@ -1,0 +1,18 @@
+.wrapper {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+    background-color: red;
+}
+
+.nav-bar {
+    background-color: rgb(100, 135, 165);
+    grid-column: span 3;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
