@@ -102,11 +102,23 @@ let myForEachArray = [1,2,3,4,5]
 
 // takes a function to run for eachThing inside my array
 myForEachArray.forEach(function(element) {
-
     console.log(element * 2)
 })
+
+// oh no! I've got a bug in my code. How do we fix it?
+// don't put the answer in chat, wait until I say go :)
+// let result = ''
 let result = ''
-for (let i = 0; i < myForEachArray.length; i++) {
-    result += result + '#'
+for (let i = 0; i < 5; i++) {
+    result += '#' // #
+                // #
+                // #
+    // += means result = result + 'something' 
     console.log(result)
 }
+
+// What I want to happen : 
+// #
+// ##
+// ###
+// ####

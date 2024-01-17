@@ -1,0 +1,21 @@
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 2fr 1fr;
+}
+
+.item {
+    background-color: red;
+}
+
+.nav-bar {
+    background-color: rgb(72, 170, 205);
+    /* grid-column: span 5; */
+    grid-column-start: 2;
+    grid-column-end: 5;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
