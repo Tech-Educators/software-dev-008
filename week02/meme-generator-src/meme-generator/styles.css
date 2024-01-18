@@ -1,0 +1,36 @@
+html {
+  background-color: #222;
+  color: #f1f1f1;
+  font-family: sans-serif;
+}
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#canvas {
+  max-width: 600px;
+}
+
+.memeform {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  gap: 1rem;
+}
+
+.memeform input {
+  padding: 0.5rem;
+}
+
+button {
+  background-color: #3F0F46;
+  color: #FF5292;
+  border: 0;
+  padding: 0.5rem;
+  font-size:2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 200ms;
+}

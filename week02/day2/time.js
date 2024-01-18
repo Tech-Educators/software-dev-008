@@ -23,3 +23,18 @@ function addPlus() {
 }
 
 setInterval(addPlus, 1000)
+
+let secret = document.getElementById('secret-message')
+let secretBtn = document.getElementById('secret-button')
+secretBtn.addEventListener('click', showSecret)
+
+function showSecret() {
+    setTimeout(
+        function() {
+            secret.classList.remove('secret')
+            setTimeout(function() {
+                secret.classList.add('secret')
+            }, 5000)
+        }, 1000
+    )
+}

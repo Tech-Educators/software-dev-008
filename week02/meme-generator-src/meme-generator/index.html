@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memer</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./meme-generator.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <h1>Make Memes</h1>
+
+    <canvas id="canvas" width="200" height="200">
+      Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <form class="memeform">
+
+      <input type="file" id="imageUpload">
+      <label for="topText">Top Text</label>
+      <input type="text" name="topText" placeholder="Top text">
+      <label for="bottomText">Bottom Text</label>
+      <input type="text" name="bottomText" placeholder="Bottom text">
+      <label for="imageFilter">Image Filter</label>
+      <select id="imageFilter">
+        <option value="none">Normal</option>
+        <option value="grayscale(100%)">Grayscale</option>
+        <option value="sepia(100%)">Sepia</option>
+        <option value="invert(100%)">Invert</option>
+        <option value="hue-rotate(90deg)">Hue</option>
+        <option value="blur(10px)">Blur</option>
+        <option value="contrast(200%)">Contrast</option>
+        <option value="brightness(200%)">Brightness</option>
+        <option value="saturate(200%)">Saturate</option>
+      </select>
+      <button>Draw meme</button>
+    </form>
+  </main>
+</body>
+
+</html>
