@@ -1,0 +1,28 @@
+#cookie-notice {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    font-family: arial;
+    font-size: 2rem;
+    padding: 1rem;
+    border: 2.5px solid gray;
+    border-radius: 10px;
+}
+
+.button {
+    border: none;
+    font-size: 20px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-accept {
+    background-color: springgreen;
+}
+
+.button-decline {
+    background-color: red;
+}
