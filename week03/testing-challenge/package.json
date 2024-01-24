@@ -1,0 +1,17 @@
+{
+  "name": "testing-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "challenge.js",
+  "scripts": {
+    "test": "vitest",
+    "boyah": "npx cowsay boyah!"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vitest": "^1.2.1"
+  }
+}
