@@ -5,8 +5,6 @@ let result = document.getElementById('result')
 form.addEventListener('submit', e => {
     e.preventDefault()
     let userInput = e.target.input.value
-    console.log(userInput)
-    console.log(spinWords(userInput))
     result.innerText = spinWords(userInput)
 })
 
@@ -19,7 +17,7 @@ function spinWords(str){
         for (let i = element.length - 1; i >= 0; i--) {
           wordReversed.push(element[i]); // loop backwards through element and push to wordReversed array. 
         }
-        strArr[i] = wordReversed.join(' '); // replace element[i] with its reversale. 
+        strArr[i] = wordReversed.join(''); // replace element[i] with its reversale. 
       }
     });
     return strArr.join(' ') // join array together. 

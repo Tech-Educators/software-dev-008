@@ -19,9 +19,31 @@ export function divide(a, b) {
 
 
 // these are much much harder - it's a huge stretch goal, don't worry about getting these done.
-export function isPalindrome() {
-  // implement function
+export function isPalindrome(str) {
+
+    'hello'.replace('l', '') // heo
+
+    'hello'.split('') // ['h', 'e','l','l','o']
+    let betterString = str.replace(/[\W]/g, '').toLowerCase()
+    let reversedString = betterString.split('').reverse().join('')
+    return betterString === reversedString
+
+
+    // make a string to compare to the input string. 
+
+    // for (let i = betterString.length - 1; i >= 0; i--) {
+    //     reversedString += betterString[i]
+    // }
+
+    // for (let i = 0; i < betterString.length; i++) {
+    //     if (reversedString[i] !== betterString[i]) {
+    //         return false
+    //     }
+    // }
+    // return true
 }
+
+isPalindrome('hello ! sdfsdR@AAA')
 
 export function isAnagram() {
   // implement function
