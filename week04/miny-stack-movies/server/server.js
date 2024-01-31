@@ -10,6 +10,7 @@ const db = new Database('database.db')
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 // ROOT ROUTE PLS
 app.get('/', (req, res) => {
@@ -61,6 +62,34 @@ app.get('/movies', (req, res) => {
         res.status(200).json(movies)
     } catch (err) {
         res.status(500).json(err)
+    }
+})
+
+app.get('/querytest', (req, res) => {
+    console.log(req.query)
+    if (req.query.one && req.query.two) {
+        res.send('You sent two queries')
+    } else if (req.query.two) {
+        res.send('You send query two')
+    } else if (req.query.one) {
+        res.send('You sent query one')
+    } else {
+        res.send(`You either didn't send a query, or you didn't send a valid one.`)
+    }
+})
+
+// POST route to create new movie entries in our Database. 
+
+app.post('/movies', (req, res) => {
+    try {   
+        const movie = req.body.movie
+        const year = req.body.year
+
+        // run my sql statement - ??'s are replaced by the values in .run() (movie, year)
+        const newMovie = db.prepare(`INSERT INTO movies (movie, year) VALUES (?,?) `).run(movie, year)
+        res.status(200).json(newMovie)
+    } catch (err) {
+        res.status(500).json({error : err})
     }
 })
 
