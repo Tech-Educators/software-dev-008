@@ -5,17 +5,22 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="/main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <title>Vite App</title>
   </head>
   <body>
-    <h4>Sams Movie DB</h4>
-    <form id="form">
-      <label for="">Movie</label>
-      <input type="text" name="movie">
-      <label for="">Year</label>
-      <input type="text" name="year">
-      <button type="submit">Submit your movie</button>
-    </form>
+    <div class="nav-bar">
+      <h4>Sams Movie DB</h4>
+      <form id="form">
+        <label for="name">Movie</label>
+        <input id='name' type="text" name="movie">
+        <label for="year">Year</label>
+        <input type="text" name="year" id="year">
+        <label for="imgUrl">Img Url</label>
+        <input type="text" id="imgUrl" name="imgURL">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
     <div id="movie-container"></div>
   </body>
 </html>
