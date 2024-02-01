@@ -71,6 +71,36 @@ async function displayMovies() {
     imgTag.src = movie.imgURL
     delButton.textContent = 'X'
 
+    // updates inputs 
+    const updateDiv = document.createElement('div')
+    const updateYear = document.createElement('input')
+    updateYear.setAttribute('name', 'year')
+    updateYear.value = movie.year
+    const updateMovie = document.createElement('input')
+    updateMovie.setAttribute('name', 'movie')
+    updateMovie.value = movie.movie
+    const updateImgUrl = document.createElement('input')
+    updateImgUrl.setAttribute('name', 'imgURL')
+    updateImgUrl.value = movie.imgURL
+    const updateButton = document.createElement('button')
+    updateButton.textContent = 'update'
+    const updateForm = document.createElement('form')
+    updateButton.setAttribute('type', 'submit')
+
+    // listen to changes on form
+    updateForm.addEventListener('submit', e => {
+      e.preventDefault()
+      const formData = new FormData(updateForm)
+      const info = Object.fromEntries(formData)
+      console.log(info)
+      handleUpdate(movie.id, info)
+    })
+
+    updateForm.appendChild(updateMovie)
+    updateForm.appendChild(updateYear)
+    updateForm.appendChild(updateImgUrl)
+    updateForm.appendChild(updateButton)
+    updateDiv.appendChild(updateForm)
 
     delButton.addEventListener('click', (e) => {
       e.preventDefault()
@@ -82,6 +112,7 @@ async function displayMovies() {
     movieCard.appendChild(delButton)
     movieCard.appendChild(infoDiv)
     movieCard.appendChild(imgTag)
+    movieCard.appendChild(updateDiv)
 
     movieContainer.appendChild(movieCard)
 
@@ -100,6 +131,27 @@ async function handleDelete(id) {
   }
 }
 
+async function handleUpdate(id, updatedInfo) {
+  const result = await fetch(`${baseURL}/movies/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type" : "application/json"
+    },
+    body : JSON.stringify(updatedInfo)
+  })
+
+  if (result.ok) {
+    displayMovies()
+  }
+}
 // get post
 
 // update delet
+
+
+// for each of the moives
+
+// create an input for the movie title, imgurl year. 
+// set the vlaues of each of those inputs to be whatever the current value is of that movie 
+// add a button to submit 
+// when submit make a put request. 

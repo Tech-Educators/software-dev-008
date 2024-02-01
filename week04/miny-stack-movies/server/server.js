@@ -127,13 +127,14 @@ app.delete('/movies/:id', (req, res) => {
 })
 
 app.put('/movies/:id', (req, res) => {
+    console.log(req.params, req.body)
     try {
         const id = req.params.id
         const movie = req.body.movie
         const year = req.body.year
         const imgUrl = req.body.imgURL
 
-        const updateMovies = db.prepare(`UPDATE movies SET movie = ?, year = ? imgURL = ? WHERE id = ?`).run(movie, year, imgUrl, id)
+        const updateMovies = db.prepare(`UPDATE movies SET movie = ?, year = ? , imgURL = ? WHERE id = ?`).run(movie, year, imgUrl, id)
         res.status(204).json({messaged : updateMovies})
     } catch (err) {
         res.status(500).json({error: err})
