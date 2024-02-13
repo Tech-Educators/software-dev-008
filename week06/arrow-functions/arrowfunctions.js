@@ -10,7 +10,7 @@ const sayGoodbye = () => {
 }
 
 // fancy!
-button.addEventListener('click', () => console.log('Hello'))
+// button.addEventListener('click', () => console.log('Hello'))
 // have to have parenthesis for no parameters
 // no parenthesis needed for one parameter
 // parenthesis needed for more than one parameter
@@ -19,7 +19,7 @@ button.addEventListener('click', () => console.log('Hello'))
 // if you do have {}'s you have to return. 
 
 // function expression
-const addInterrobang = string => string + '?!'
+const addInterrobang = string => console.log(string + '?!')
 
 // function declaration 
 function addInterrobangAgain() {

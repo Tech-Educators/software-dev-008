@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+.treecard-container {
+  display: flex;
+}

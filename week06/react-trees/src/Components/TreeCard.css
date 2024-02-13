@@ -1,0 +1,14 @@
+.tree-card {
+    height: 50vh;
+    width: 30vw;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(222, 222, 222);
+}
+
+img {
+    height: 190px;
+    width: auto;
+}
