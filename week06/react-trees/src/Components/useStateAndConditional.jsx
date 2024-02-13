@@ -11,6 +11,8 @@ export default function UseStateAndConditional() {
     })
 
     console.log(form)
+
+    // some func is called by handleClick (someFunc is a parameter - it gets what function it needs to be when it is invoked inside our buttons onClick)
     function handleClick(someFunc) {
         someFunc()
     }
