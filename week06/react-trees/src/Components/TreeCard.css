@@ -10,8 +10,7 @@
     border-radius: 5px;
 }
 
-.treecard img {
-    /* height: auto;
-    width: 190px; */
-    object-fit: cover;
+img {
+    height: auto;
+    width: 190px;
 }

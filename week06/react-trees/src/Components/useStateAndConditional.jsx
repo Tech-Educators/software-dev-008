@@ -10,7 +10,7 @@ export default function UseStateAndConditional() {
         age: 20
     })
 
-    console.log(form)
+    // console.log(form)
 
     // some func is called by handleClick (someFunc is a parameter - it gets what function it needs to be when it is invoked inside our buttons onClick)
     function handleClick(someFunc) {
