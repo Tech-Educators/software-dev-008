@@ -1,8 +1,15 @@
 * {
   box-sizing: border-box;
   font-family: monospace;
+  color:black;
+}
+
+body {
+  /* background-image: url('https://images.unsplash.com/photo-1570342457566-0002e712eda3?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
+  background-color: white;
 }
 
 .treecard-container {
+  margin: 2rem;
   display: flex;
 }

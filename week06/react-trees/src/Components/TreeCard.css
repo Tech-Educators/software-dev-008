@@ -1,14 +1,17 @@
 .tree-card {
-    height: 50vh;
-    width: 30vw;
+    height: 60vh;
+    width: 50vw;
     margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     background-color: rgb(222, 222, 222);
+    border-radius: 5px;
 }
 
-img {
-    height: auto;
-    width: 190px;
+.treecard img {
+    /* height: auto;
+    width: 190px; */
+    object-fit: cover;
 }
