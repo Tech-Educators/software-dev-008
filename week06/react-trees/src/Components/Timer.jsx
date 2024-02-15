@@ -6,15 +6,15 @@ export default function Timer() {
     // console.log('Timer compoonent is re-rednering....')
     const [count, setCount] = useState(0)
 
-    // useEffect(() => {
-    //     console.log('Running...')
-    //     let interval = setInterval(() => {
-    //         setCount((count) => count + 1)
-    //     }, 1000)
+    useEffect(() => {
+        console.log('Running...')
+        let interval = setInterval(() => {
+            setCount((count) => count + 1)
+        }, 1000)
 
-    //     // return the callback function (which in this case is calling clearInterval.)
-    //     return () => clearInterval(interval)
-    // }, [])
+        // return the callback function (which in this case is calling clearInterval.)
+        return () => clearInterval(interval)
+    }, [])
 
     return (
         <>
