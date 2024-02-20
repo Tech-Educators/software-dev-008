@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.otterCard {
+    position: relative;
+    width: 290px;
+    height: 450px;
+    background: #000000;
+    box-shadow: 10px 20px 20px #060606;
+    margin: 2rem;
+}
+
+.otterCard:hover{
+    background: #e0e0e0;
+    box-shadow: 10px 10px 30px #7bccffb5;
+    margin: 2rem;
+}
+
+.otter-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.otter-txt-700 {
+    position: relative;
+    bottom: 440px;
+    text-align: center;
+    /* left: 50%;
+    transform: translateX(-20%); */
+    z-index: 3;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.otter-detail-container {
+    position: absolute;
+    width:80%;
+    bottom: -5px;
+    z-index: 3;
+    color: white;
+    background: rgba(0, 0, 0, 0.38);
+    backdrop-filter: blur(10px);
+    object-fit: contain;
+}
+
+.otter-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.txt-mS {
+    padding: 5px;
+}

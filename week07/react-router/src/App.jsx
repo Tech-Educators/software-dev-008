@@ -1,18 +1,19 @@
 import { Route, Routes, Link} from "react-router-dom"
 import Home from "./pages/Home"
 import NotFound from "./pages/NotFound"
-import Root from "./pages/Root"
+
+import OtterGallery from "./pages/OtterGallery"
 
 export default function App() {
   return (
     <div>
-      <h1>Welcome to my app!</h1>
       <nav>
+        <h1>Otter Adoption</h1>
         <Link to='/home'>Home</Link>
         <Link to='/otters'>Otters</Link>
       </nav>
       <Routes>
-        <Route path='/' element={ <Root />} />
+        <Route path='/otters' element={<OtterGallery />} />
         <Route path='/home' element={<Home />}/>
         <Route path='*' element={<NotFound />} />
       </Routes>
