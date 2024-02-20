@@ -54,7 +54,7 @@
   font-style: italic;
 }
 
-.ibm-plex sans-light-italic {
+.ibm-plex-sans-light-italic {
   font-family: "IBM Plex Sans", sans-serif;
   font-weight: 300;
   font-style: italic;
@@ -87,4 +87,16 @@
 
 body {
   background-color: rgb(25, 25, 25);
+  color:white;
+}
+
+a:link, a:visited {
+  color: rgb(255, 255, 255);
+  margin: 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.sortButtons {
+  margin: 30px;
 }
