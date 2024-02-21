@@ -17,7 +17,7 @@ export default function App() {
       <Routes>
         <Route path='/otters' element={<OtterGallery />}></Route>
         {/* Anything after /otters is fine, : means dynamic route */}
-        <Route path='/otters/:otter' element={<OtterDetails/>}>
+        <Route path='/otters/:id' element={<OtterDetails/>}>
           <Route path='conservation' element={<ConservationInfo/>} />
         </Route>
 

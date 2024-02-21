@@ -26,7 +26,6 @@ export default function App() {
           setInput(e.target.value)
         }}/>
       </form> */}
-
       {/* More complext input */}
       <form>
         <input name='location' type='text' onChange={handleChange} id='01'/>
@@ -34,14 +33,14 @@ export default function App() {
         <input name='notes' type='text' onChange={handleChange} id='03'/>
       </form>
       <p>You inputed: {input} </p>
-      <Counter />
+      <Counter hi={'hello'}/>
     </div>
   )
 }
 
-function Counter() {
+function Counter({hi}) {
   const [counter, setCounter] = useState(0)
   return (
-    <button onClick={() => setCounter(counter + 1)}>click me</button>
+    <button onClick={(e) => {setCounter(counter + 1); console.log(e)}}>{hi}</button>
   )
 }

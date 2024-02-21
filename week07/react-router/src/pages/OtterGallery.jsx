@@ -8,8 +8,10 @@ import { useSearchParams, Link} from "react-router-dom";
 
 export default function OtterGallery() {
     console.log('Hello... component running')
-    const [ searchParams ] = useSearchParams()
+    const [ searchParams, setSearchParams ] = useSearchParams()
 
+    // { 'sort' : 'asc'}
+    console.log(searchParams)
     const sortType = searchParams.get('sort')
    
     console.log(sortType)
@@ -46,6 +48,7 @@ export default function OtterGallery() {
             {copy.map(otter => (
                     <Otter otter={otter}/>
             ))}
+            <button onClick={() => {setSearchParams({'groupBy': 'something'})}}>Hmmm 🤔</button>
         </div>
         </div>
     )
