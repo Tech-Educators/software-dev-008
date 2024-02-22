@@ -1,0 +1,23 @@
+.art-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.art-card-image {
+  height: auto;
+  width: 20vw;
+  margin: 10px;
+  border: 5px solid rgb(233, 148, 12);
+  transition: 0.5s ease;
+}
+
+.art-card img:hover {
+  box-shadow: 1px 1px rgb(158, 100, 8), 2px 2px rgb(158, 100, 8),
+    3px 3px rgb(158, 100, 8), 4px 4px rgb(158, 100, 8), 5px 5px rgb(158, 100, 8),
+    6px 6px rgb(158, 100, 8);
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
+  transition: 0.5s ease;
+}
