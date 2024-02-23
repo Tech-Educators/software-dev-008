@@ -1,16 +1,6 @@
 const form = document.getElementById('form')
 const movieContainer = document.getElementById('movie-container')
 
-let x = document.createElement('p')
-
-x.textContent = 'hello'
-
-document.body.appendChild(x)
-
-x.addEventListener('click', () => {
-  console.log('click')
-})
-
 const baseURL = 'http://localhost:4242'
 
 form.addEventListener('submit', async (e) => {
@@ -57,19 +47,20 @@ async function displayMovies() {
   movieContainer.innerHTML = ''
   movies.forEach(movie => {
 
-    let h3Tag = document.createElement('h3')
-    let pTag = document.createElement('p')
-    let imgTag = document.createElement('img')
-    let delButton = document.createElement('p')
+    let movieTitle = createElement('h3', movie.title, infoDiv)
+    // let h3Tag = document.createElement('h3')
+    // let pTag = document.createElement('p')
+    // let imgTag = document.createElement('img')
+    // let delButton = document.createElement('p')
 
     let infoDiv = document.createElement(`div`)
-    let movieCard = document.createElement('div')
+    // let movieCard = document.createElement('div')
 
-    h3Tag.textContent = movie.movie
-    h3Tag.setAttribute('class', 'movieTitle')
-    pTag.textContent = movie.year
-    imgTag.src = movie.imgURL
-    delButton.textContent = 'X'
+    // h3Tag.textContent = movie.movie
+    // h3Tag.setAttribute('class', 'movieTitle')
+    // pTag.textContent = movie.year
+    // imgTag.src = movie.imgURL
+    // delButton.textContent = 'X'
 
     // updates inputs 
     const updateDiv = document.createElement('div')
@@ -107,7 +98,7 @@ async function displayMovies() {
       handleDelete(movie.id)
     })
 
-    infoDiv.appendChild(h3Tag)
+    infoDiv.appendChild(movieTitle)
     infoDiv.appendChild(pTag)
     movieCard.appendChild(delButton)
     movieCard.appendChild(infoDiv)
@@ -155,3 +146,24 @@ async function handleUpdate(id, updatedInfo) {
 // set the vlaues of each of those inputs to be whatever the current value is of that movie 
 // add a button to submit 
 // when submit make a put request. 
+
+
+function createElement(tag, attributes = '', textContent = '', parent='') {
+  let tag = document.createElement(tag)
+  
+  if (attributes) {
+    attributes.forEach(attribute => {
+      tag.setAttribute(attribute[0], attribute[1])
+    })
+  }
+
+  if (textContent) {
+    tag.innerText = textContent
+  }
+
+  if (parent) {
+    parent.appendChild(tag)
+  }
+
+  return tag
+}

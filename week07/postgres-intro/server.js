@@ -74,6 +74,7 @@ app.get('/conservation', async (req, res) => {
 
 
 // if we need to use user input/validate data before inserting!
+// the $1's are replaced in order by the values in the array (you also pass that array to .query())
 app.get('/special-insert', async (req, res) => {
     const result = await db.query(`INSERT INTO otters (name, age, species, conservation_agency_id) VALUES ($1, $2, $3, $4);`, ['Bug', 2, 'Smooth-Coated Otter', 4])
     res.json(result)
