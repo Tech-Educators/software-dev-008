@@ -5,6 +5,7 @@ import NotFound from "./pages/NotFound"
 import OtterGallery from "./pages/OtterGallery"
 import { OtterDetails } from "./pages/OtterDetails"
 import ConservationInfo from "./pages/ConservationInfo"
+import ConservationAgencies from "./pages/ConservationAgencies"
 
 export default function App() {
   return (
@@ -20,6 +21,8 @@ export default function App() {
         <Route path='/otters/:id' element={<OtterDetails/>}>
           <Route path='conservation' element={<ConservationInfo/>} />
         </Route>
+
+        <Route path='/conservation' element={<ConservationAgencies />} />
 
         {/* /otters/smooth-coat */}
         {/* /otters/smooth-coat/conservation */}
