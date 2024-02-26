@@ -10,6 +10,7 @@ export default function Home() {
       <h1>Sam&apos;s next next app!?</h1>
       <p>I want to show some other stuff! This is a great home page, but we can always do more..</p>
       <Link href='/cats-vs-dogs'>Read the thrilling history..</Link>
+      <Link href='/blog'>Read blog posts</Link>
     </main>
   );
 }
