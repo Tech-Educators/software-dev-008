@@ -6,7 +6,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --colour-purople : rbga(34,4,3,1)
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -30,4 +32,9 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+span {
+  font-family: var(--font-yatra_one);
+  color: darksalmon;
 }

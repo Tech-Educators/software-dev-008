@@ -1,7 +1,20 @@
-import { Inter } from "next/font/google";
+import { Inter, Gluten, Yatra_One, Libre_Barcode_128_Text} from "next/font/google";
 import "./globals.css";
 
+// use the imported font as a function, and pass it an object (options config)
 const inter = Inter({ subsets: ["latin"] });
+export const gluten = Gluten({subsets: ["latin"]});
+
+export const barcode = Libre_Barcode_128_Text({
+  weight: '400',
+  subsets : ['latin']
+})
+
+const yatra_one = Yatra_One({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-yatra_one',
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +24,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} ${yatra_one.variable}`}>{children}</body>
     </html>
   );
 }
+
+
+// varaible fonts 
+// font weights!
