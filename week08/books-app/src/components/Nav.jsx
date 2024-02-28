@@ -5,6 +5,7 @@ export default function Nav() {
             <ol className="flex flex-row p-3">
                 <li className="m-4"><Link href='/'>home</Link></li>
                 <li className="m-4"><Link href='/books'>books</Link></li>
+                <li className="m-4"><Link href='/books/add-book'> add book</Link></li>
             </ol>
         </div>
     )
