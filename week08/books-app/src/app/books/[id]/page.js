@@ -4,16 +4,17 @@ import Image from "next/image"
 export default async function Page({params}) {
 
     const book = (await sql`SELECT * FROM books WHERE id = ${params.id}`).rows[0]
-    const genres = (await sql`
+
+       const genres = (await sql`
         SELECT g.* FROM genres g
-        JOIN book_genres bg ON g.id = bg.genre_id
+        INNER JOIN book_genres bg ON g.id = bg.genre_id
         WHERE bg.book_id = ${params.id}`)
         .rows;
 
     let genresDisplay = genres.length > 0 
         ? genres.map(genre => genre.name).join(', ') 
         : "No genres";
-
+    
 
     return (
         <div className="flex flex-col text-center items-center">
@@ -33,3 +34,10 @@ export default async function Page({params}) {
 
 // find out what page Im on
 // write a sql query to get data about the page im osn 
+
+
+// genres = g
+// book_genres =  bg
+
+// select all from geners 
+// join some information from book genres - where the genre table ID = book_genre table id

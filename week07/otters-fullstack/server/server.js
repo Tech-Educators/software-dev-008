@@ -45,7 +45,30 @@ app.delete('/otters', async (req, res) => {
 
 app.post('/otters', async (req, res) => {
     try {
-        let query = `INTERT INTO otters `
+        // the user will send over information in the req.body: 
+        /* 
+            {
+                "name" : "bubbles",
+                "age" : "2",
+                "species": "Smooth-Coated Otter"
+                "conservation_agency_id": 3
+            }
+        */
+
+        let name = req.body.name
+        let age = req.body.age
+        let species = req.body.species
+        let conservation_agency_id = req.body.conservation_agency_id
+        // when someone makes a post request
+        // they have to send certain details with. 
+        await db.query(`
+        INSERT INTO otters (name, age, species, conservation_agency_id)
+        VALUES
+        ($1, $2, $3, $4)
+        `,
+        [name, age, species, conservation_agency_id]
+        )
+        res.status(200).json({message: 'Otter created!'})
     } catch (err) {
         res.status(400).json({error: err.message})
     }
@@ -55,9 +78,28 @@ app.get('/conservation', async (req, res) => {
     try {
         let result = await db.query(`SELECT * FROM conservation_agencies`)
         // this works fine - the data we want it on rows!
-        console.log(result.rows)
         res.status(200).json(result.rows)
     } catch (err) {
+    }
+})
+
+app.post('/conservation', async (req, res) => {
+    console.log(req.body)
+    try {
+        let name = req.body.name
+        let founded_year = req.body.founded_year
+        let country = req.body.coutry
+
+        let result = await db.query(`
+        INSERT INTO conservation_agencies (name, founded_year, country)
+        VALUES
+        ($1, $2, $3)
+        `,
+        [name, founded_year, country]
+        )
+        res.status(200).json({message: 'Conservation agency created!'})
+    } catch (err) {
+        res.status({error : err})
     }
 })
 

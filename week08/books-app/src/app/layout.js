@@ -1,8 +1,11 @@
-import { Inter } from 'next/font/google'
+import { Inter, Maven_Pro} from 'next/font/google'
+import { Inconsolata } from "next/font/google"
 import './globals.css'
 import Nav from '@/components/Nav'
 
+const inconsolata = Inconsolata({subsets: ['latin']})
 const inter = Inter({ subsets: ['latin'] })
+export const maven_pro = Maven_Pro({subsets: ['latin']})
 
 export const metadata = {
   title: 'Sams Books',
@@ -12,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children, test}) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inconsolata.className}>
         <Nav />
         {test}
         {children}

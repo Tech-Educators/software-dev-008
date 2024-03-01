@@ -93,6 +93,7 @@ CREATE TABLE genres (
 );
 ```
 
+### Junction tables
 
 ```
 CREATE TABLE book_genres (
@@ -106,3 +107,17 @@ CREATE TABLE book_genres (
 
 
 The ON DELETE CASCADE option ensures that when a book or genre is deleted, its corresponding entries in the BooksGenres table are also automatically deleted. So that nothing referes to something it shouldn't anymore. 
+
+
+```
+   // const genres = (await sql`
+    //     SELECT g.* FROM genres g
+    //     INNER JOIN book_genres bg ON g.id = bg.genre_id
+    //     WHERE bg.book_id = ${params.id}`)
+    //     .rows;
+
+    // let genresDisplay = genres.length > 0 
+    //     ? genres.map(genre => genre.name).join(', ') 
+    //     : "No genres";
+
+```

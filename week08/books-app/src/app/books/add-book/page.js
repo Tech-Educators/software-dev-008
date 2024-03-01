@@ -5,6 +5,8 @@ import { redirect } from "next/navigation"
 import SubmitButton from "@/components/SubmitButton"
 import { getGenres } from "@/utils/utils"
 
+import { maven_pro } from "@/app/layout"
+
 export default async function Page() {
     // becuase this function is used in the form action attribute, it's 'contents' are passed automatically (the formData)
     async function handleAddBook(formData) {
@@ -15,7 +17,7 @@ export default async function Page() {
         const quote = formData.get('quote')
         const img_url = formData.get('img_url')
 
-        // .get only returns one 
+        // .get only returns one returns an array. 
         const genres = formData.getAll('genres')
         // console.log('genres selected: ' + genres)
         // console.log(genres)
@@ -38,7 +40,7 @@ export default async function Page() {
 
     let genres = await getGenres()
     return (
-        <div className="bg-zinc-700 flex flex-col items-center">
+        <div className={`bg-zinc-700 flex flex-col items-center ${maven_pro.className}`}>
             <h2 className="text-xl">Add Book to DB</h2>
             <form action={handleAddBook} className="w-6/12 flex flex-col justify-center text-black">
                 <label className='text-amber-400 text-lg'>
