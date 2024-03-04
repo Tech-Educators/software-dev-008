@@ -1,0 +1,17 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --text-color: rgb(19, 79, 15);
+  --links-colour: rgb(23, 23, 135);
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: url("/collection-background.avif");
+  background-size: cover;
+  color: var(--text-color);
+}
