@@ -1,15 +1,27 @@
 import { sql } from "@vercel/postgres"
 import Image from "next/image"
+import { notFound } from "next/navigation";
 
 export default async function Page({params}) {
 
-    const book = (await sql`SELECT * FROM books WHERE id = ${params.id}`).rows[0]
+    // if (isNaN(params.id) ) {
+    let book;
+    try {
+        book = (await sql`SELECT * FROM books WHERE id = ${params.id}`)?.rows?.[0]
+    } catch (err) {
+        // change to something else. 'you asked for wrong type of thing
+        notFound()
+    }
 
-       const genres = (await sql`
-        SELECT g.* FROM genres g
-        INNER JOIN book_genres bg ON g.id = bg.genre_id
-        WHERE bg.book_id = ${params.id}`)
-        .rows;
+    if (!book) {
+        notFound()
+    }
+
+    const genres = (await sql`
+    SELECT g.* FROM genres g
+    INNER JOIN book_genres bg ON g.id = bg.genre_id
+    WHERE bg.book_id = ${params.id}`)
+    .rows;
 
     let genresDisplay = genres.length > 0 
         ? genres.map(genre => genre.name).join(', ') 

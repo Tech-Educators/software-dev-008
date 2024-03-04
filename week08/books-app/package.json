@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.29.9",
     "@vercel/postgres": "^0.7.2",
     "next": "14.0.0",
     "react": "^18",
