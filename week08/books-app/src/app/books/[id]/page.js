@@ -1,8 +1,12 @@
 import { sql } from "@vercel/postgres"
 import Image from "next/image"
 import { notFound } from "next/navigation";
+import DeleteButton from "@/components/DeleteButton";
+import EditBookDetails from "@/components/EditBookDetails";
 
 export default async function Page({params}) {
+
+    // let book = (await sql`SELECT * FROM books WHERE id = ${params.id}`)?.rows?.[0]
 
     // if (isNaN(params.id) ) {
     let book;
@@ -29,17 +33,26 @@ export default async function Page({params}) {
     
 
     return (
-        <div className="flex flex-col text-center items-center">
+        // <div className="flex flex-col text-center items-center">
+        <div className="grid grid-cols-3 grid-rows-3 max-w-screen-lg m-auto child:mx-4">
             <div>
-                <h2>{book.title}</h2>
-                <p>{book.author}</p>
-                <p>Genres: {genresDisplay}</p>
+                {book.img_url && <Image src={book.img_url} width={300} height={500}/>}
+                <div>
+                    <h2>{book.title}</h2>
+                    <p>{book.author}</p>
+                    <p>Genres: {genresDisplay}</p>
+                </div>
             </div>
-            {book.img_url && <Image src={book.img_url} width={300} height={500}/>}
-            <br/>
-            <p>{book.description}</p>
-            <br></br>
-            <p>{book.quote}</p>
+            <div>
+                <p>{book.description}</p>
+                <p className="mt-4">"{book.quote}"</p>
+            </div>
+            
+            <div>
+                {/* TODO: move to admin org only */}
+                <DeleteButton id={book.id}/>
+                <EditBookDetails book={book} genres={genres}/>
+            </div>
         </div>
     )
 }

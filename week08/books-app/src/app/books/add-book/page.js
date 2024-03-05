@@ -2,12 +2,22 @@ import {sql} from "@vercel/postgres"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
+import { auth } from "@clerk/nextjs"
+
 import SubmitButton from "@/components/SubmitButton"
 import { getGenres } from "@/utils/utils"
 
 import { maven_pro } from "@/app/layout"
 
 export default async function Page() {
+
+    // auth is fun. i love it. 
+    const {userId} = auth()
+
+    
+    if (!userId) {
+        redirect('/sign-in')
+    }
     // becuase this function is used in the form action attribute, it's 'contents' are passed automatically (the formData)
     async function handleAddBook(formData) {
         "use server"
@@ -87,4 +97,3 @@ export default async function Page() {
 //     description: 'something',
 //     quote: "No one in the world gets what they want and that is beautiful."
 // }
-
