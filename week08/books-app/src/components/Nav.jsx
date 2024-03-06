@@ -1,12 +1,12 @@
 import Link from "next/link"
-import { SignInButton, UserButton, SignedIn, SignedOut} from "@clerk/nextjs";
-import { auth } from "@clerk/nextjs";
+import { SignInButton, UserButton, SignedIn, SignedOut, auth} from "@clerk/nextjs";
+
 
 import AccentButton from "./AccentButton";
+import { sql } from "@vercel/postgres";
+import { redirect } from "next/navigation";
 
 export default function Nav() {
-    const {userInfo} = auth()
-
     return (
         <div>
             <ol className={`flex justify-between flex-row p-3`}>
@@ -17,12 +17,18 @@ export default function Nav() {
                     <li className="m-4"><Link href='/add-genre'> add/view genres</Link></li>
                 </div>
                 <li className="m-4 self-end">
+                    {/* TODO: What a mess! */}
                     {
-                        <>
-                    <SignedIn><UserButton/></SignedIn>
-                    <SignedOut><SignInButton><AccentButton content='sign in'/></SignInButton></SignedOut>
+                    <>
+                        <SignedIn>
+                            <UserButton/>
+                        </SignedIn>
+                        <SignedOut>
+                            <SignInButton afterSignInUrl="/" afterSignUpUrl="/users/sign-up">
+                                <AccentButton content='sign in'/>
+                            </SignInButton>
+                        </SignedOut>
                     </>
-
                     }
                 </li>
             </ol>

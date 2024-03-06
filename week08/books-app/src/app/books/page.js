@@ -2,6 +2,7 @@ import DeleteButton from "@/components/DeleteButton";
 import { sql } from "@vercel/postgres"
 import Link from "next/link";
 import Image from "next/image";
+import PopularBooks from "@/components/PopularBooks";
 
 
 export default async function Page() {
@@ -12,6 +13,7 @@ export default async function Page() {
     return (
         <div className="max-w-screen-lg flex flex-col items-center m-auto">
             <h1>Popular books:</h1>
+            <PopularBooks />
             <div className="flex flex-row flex-wrap min-w-1.5">
             {books.map(book => (
                 <div key={book.id} className="m-4 w-40">

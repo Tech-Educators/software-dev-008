@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 
 
 export default async function EditBookDetails({ book, genres }) {
-    
+    // TODO: sort out the 'current' genres stuff
     const allGenres = (await sql`SELECT * FROM genres`).rows
 
     async function handleEditBook(formData) {
@@ -24,6 +24,7 @@ export default async function EditBookDetails({ book, genres }) {
         revalidatePath(`/books/${book.id}`);
     }
 
+    // TODO: turn this and create book into one form component lol
     return (
         <div className={`bg-zinc-700 flex flex-col items-center p-6`}>
             <h2 className="text-xl text-amber-400">Edit Book Details</h2>
