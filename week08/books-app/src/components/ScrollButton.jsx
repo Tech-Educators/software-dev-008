@@ -14,5 +14,3 @@ export default function ScrollButton({children, action, scroll}) {
        </>
     )
 }
-
-/books/4

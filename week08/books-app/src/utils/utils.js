@@ -92,11 +92,7 @@ export async function fetchPopular(paginationNumber) {
         
 }
 
-
-// FIXME: make sure that if a user is signed in, they've made a profile. 
-// TODO: this should be somewhere else 
-export async function userSignedUp(user) {
-    console.log('boo')
+export async function isSignedUp(user) {
     try {
         let userExists = (await sql`SELECT * FROM users WHERE clerk_id = ${user}`).rows
         return userExists.length != 0

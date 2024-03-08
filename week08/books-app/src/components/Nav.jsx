@@ -6,6 +6,7 @@ import AccentButton from "./AccentButton";
 import { sql } from "@vercel/postgres";
 import { redirect } from "next/navigation";
 
+
 export default function Nav() {
     return (
         <div>

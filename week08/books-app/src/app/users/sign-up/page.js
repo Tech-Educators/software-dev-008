@@ -7,7 +7,6 @@ export default function Page() {
 
     async function handleCreateUser(formData) {
         'use server'
-        console.log('something happening')
         const {username, bio} = Object.fromEntries(formData)
         // console.log(userId)
         try {
