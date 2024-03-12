@@ -1,0 +1,7 @@
+.header_h1 {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  font-size: 5rem;
+  background-color: rgb(233, 148, 12, 0.3);
+}
