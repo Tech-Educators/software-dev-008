@@ -1,18 +1,24 @@
 'use client'
-
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useReducer } from "react"
 
 const CookieContext = createContext(0)
 
-export default function CookieProvider({children}) {
-    const [cookies, setCookies] = useState(0)
-
-    function incrementCookies() {
-        setCookies(cookies + 1)
+function CookieReducer(state, action) {
+    switch (action.type) {
+        case "+5":
+            return state + 5
+        case "-5":
+            return state - 5
+        default:
+            throw new Error('what are you doing? Action not recognised')
     }
+       
+}
 
+export default function CookieProvider({children}) {
+    const [state, dispatch] = useReducer(CookieReducer, 0)
     return (
-        <CookieContext.Provider value={{cookies, incrementCookies}}>
+        <CookieContext.Provider value={{state, dispatch}}>
             {children}
         </CookieContext.Provider>
     )
@@ -28,3 +34,15 @@ export function useCookie() {
     // tell it what context we're trying to retrive
     return useContext(CookieContext)
 }
+
+
+
+    // const [cookies, setCookies] = useState(0)
+
+    // function incrementCookies() {
+    //     setCookies(cookies + 1)
+    // }
+
+    // function decrementCookies() {
+    //     setCookies(cookies - 1)
+    // }
